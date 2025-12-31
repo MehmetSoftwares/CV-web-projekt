@@ -2,6 +2,10 @@ html {
   font-size: 18px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -60,6 +64,7 @@ p {
   max-width: 65ch;
 }
 
+.footer,
 footer {
   background: #333;
   color: #fff;
@@ -94,8 +99,9 @@ footer {
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: ;
+  border-radius: 8px;
   text-decoration: none;
+  background: transparent;
 }
 
 .icon-link svg {
@@ -111,6 +117,28 @@ footer {
 .icon-link:focus-visible {
   outline: 3px solid #ffffff;
   outline-offset: 2px;
+}
+
+.about {
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+}
+
+.about-avatar {
+  width: min(520px, 100%);
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0.5rem auto 1.25rem;
+}
+
+.about-text p {
+  max-width: 70ch;
+  margin: 0.75rem auto;
+  color: #222;
 }
 
 #projekter {
@@ -145,7 +173,8 @@ footer {
   padding: 1.5rem;
   border: 1px solid #ddd;
   border-radius: 12px;
-  background: #333;
+  background: #807f7f;
+  color: #fff;
 }
 
 .contact-grid {
@@ -154,10 +183,15 @@ footer {
   gap: 1rem;
 }
 
+.field {
+  min-width: 0;
+}
+
 .field label {
   display: block;
   font-weight: 700;
   margin-bottom: 0.4rem;
+  color: inherit;
 }
 
 .field input,
@@ -168,6 +202,7 @@ footer {
   border: 1px solid #cfcfcf;
   border-radius: 10px;
   background: #fafafa;
+  color: #111;
 }
 
 .field textarea {
@@ -180,6 +215,11 @@ footer {
   outline: 3px solid rgba(238, 234, 234, 0.15);
   border-color: #999;
   background: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #777;
 }
 
 .contact-actions {
@@ -230,6 +270,121 @@ footer {
     padding: 3rem 0;
   }
 }
-* { box-sizing: border-box; }
+.page-intro {
+  margin-bottom: 2rem;
+}
 
-.field { min-width: 0; }
+.lead {
+  max-width: 70ch;
+  margin: 0;
+  color: #444;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-body {
+  padding: 1rem;
+}
+
+.project-body h3 {
+  margin: 0 0 0.5rem;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-list li {
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  background: #f7f7f7;
+  font-size: 0.95em;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: #111;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.cv-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: #fff;
+}
+
+.cv-card h3 {
+  margin: 0 0 0.75rem;
+}
+
+.cv-item h4 {
+  margin: 0 0 0.25rem;
+}
+
+.cv-item p {
+  margin: 0.25rem 0;
+  max-width: none;
+}
+
+.cv-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
